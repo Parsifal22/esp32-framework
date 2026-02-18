@@ -8,6 +8,13 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "esp_log.h" 
+#include "esp_timer.h"
+#include <inttypes.h>
+#include <stdio.h>
+#include "driver/gpio.h"
+#include "freertos/semphr.h"
 //static const char *MAIN = "MAIN_TASK";
-
+#include "freertos/semphr.h"
+#include "freertos/event_groups.h"
+#include "esp_timer.h"
 #endif 
