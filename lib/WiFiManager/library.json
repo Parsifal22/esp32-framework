@@ -1,0 +1,22 @@
+{
+  "name": "WiFiManager",
+  "version": "1.0.0",
+  "description": "WiFi Manager library for ESP32",
+  "keywords": "wifi, manager, esp32",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "authors": [
+    {
+      "name": "Project Author",
+      "email": ""
+    }
+  ],
+  "frameworks": [
+    "espidf"
+  ],
+  "platforms": [
+    "espressif32"
+  ]
+}

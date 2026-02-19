@@ -1,6 +1,6 @@
 #include "Examples/examples.hpp"
-#include "HttpClient/HttpClient.hpp"
-#include "WiFiManager/WiFiManager.hpp"
+#include "HttpClient.hpp"
+#include "WiFiManager.hpp"
 
 void telegram_task(void *pvParameters) {
     HttpClient http;

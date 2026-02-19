@@ -1,0 +1,22 @@
+{
+  "name": "Mqtt_Connection",
+  "version": "1.0.0",
+  "description": "MQTT Connection library for ESP32",
+  "keywords": "mqtt, iot, esp32",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "authors": [
+    {
+      "name": "Project Author",
+      "email": ""
+    }
+  ],
+  "frameworks": [
+    "espidf"
+  ],
+  "platforms": [
+    "espressif32"
+  ]
+}

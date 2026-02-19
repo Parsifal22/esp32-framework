@@ -1,3 +1,5 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/event_groups.h"
 #include "WiFiManager.hpp"
 
 static const char* TAG = "WiFiManager";

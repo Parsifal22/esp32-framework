@@ -20,31 +20,45 @@ A comprehensive IoT application built for ESP32 microcontrollers with support fo
 ## Project Structure
 
 ```
-├── src/                      # Main source code
-│   ├── main.cpp             # Entry point (app_main)
-│   ├── config.hpp           # Configuration and includes
-│   ├── Examples/            # Example implementations
-│   │   ├── examples.hpp
-│   │   ├── GPIO_example.cpp
-│   │   └── Wifi_Connection_example.cpp
-│   ├── HttpClient/          # HTTP client implementation
-│   │   ├── HttpClient.hpp
-│   │   └── HttpClient.cpp
-│   ├── WiFiManager/         # WiFi connection management
-│   │   ├── WiFiManager.hpp
-│   │   └── WiFiManager.cpp
-│   ├── Mqtt_Connection/     # MQTT client implementation
-│   │   ├── Mqtt_Connection.hpp
-│   │   └── Mqtt_Connection.cpp
-│   └── GPIO/                # GPIO handling
-│       └── GPIO.hpp
-├── components/              # ESP-IDF components
-├── include/                 # Header files
-├── lib/                     # Library files
-├── test/                    # Test files
-├── CMakeLists.txt          # CMake build configuration
-├── platformio.ini          # PlatformIO configuration
-└── README.md               # This file
+├── src/                          # Main application source code
+│   ├── main.cpp                 # Entry point (app_main function)
+│   ├── config.hpp               # Global configuration and FreeRTOS includes
+│   ├── CMakeLists.txt           # CMake build configuration for src
+│   └── Examples/                # Example implementations
+│       ├── examples.hpp         # Examples header declarations
+│       ├── GPIO_example.cpp     # GPIO usage examples
+│       └── Wifi_Connection_example.cpp # WiFi and MQTT examples
+│
+├── lib/                          # Local reusable libraries (PlatformIO managed)
+│   ├── GPIO/                    # GPIO abstraction library
+│   │   ├── GPIO.hpp             # GPIO class declaration
+│   │   ├── GPIO.cpp             # GPIO implementation (digital & analog)
+│   │   └── library.json         # PlatformIO library metadata
+│   │
+│   ├── HttpClient/              # HTTP client library
+│   │   ├── HttpClient.hpp       # HTTP client class declaration
+│   │   ├── HttpClient.cpp       # HTTP GET/POST/Telegram implementation
+│   │   └── library.json         # PlatformIO library metadata
+│   │
+│   ├── WiFiManager/             # WiFi connection management library
+│   │   ├── WiFiManager.hpp      # WiFiManager class declaration
+│   │   ├── WiFiManager.cpp      # WiFi event handling implementation
+│   │   └── library.json         # PlatformIO library metadata
+│   │
+│   ├── Mqtt_Connection/         # MQTT client library
+│   │   ├── Mqtt_Connection.hpp  # MQTT class declaration
+│   │   ├── Mqtt_Connection.cpp  # MQTT pub/sub implementation
+│   │   └── library.json         # PlatformIO library metadata
+│   │
+│   └── README.md                # Libraries documentation
+│
+├── components/                   # ESP-IDF components (if needed)
+├── include/                      # Additional header files
+├── test/                         # Unit tests
+├── CMakeLists.txt               # Root CMake build configuration
+├── platformio.ini               # PlatformIO project configuration
+├── sdkconfig.esp-wrover-kit    # ESP-IDF SDK configuration
+└── README.md                     # This file
 ```
 
 ## Configuration

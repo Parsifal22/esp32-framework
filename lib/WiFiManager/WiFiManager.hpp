@@ -1,9 +1,13 @@
 #pragma once
+#include "freertos/FreeRTOS.h"
+#include "freertos/event_groups.h"
 #include "nvs_flash.h"
 #include "esp_wifi.h"      
 #include "esp_event.h"     
-#include "freertos/event_groups.h"
-#include "../config.hpp"
+#ifdef __cplusplus
+#include <string>
+#endif
+#include "esp_log.h" 
 
 class WiFiManager {
 public:

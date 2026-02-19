@@ -1,0 +1,22 @@
+{
+  "name": "HttpClient",
+  "version": "1.0.0",
+  "description": "HTTP Client library for ESP32",
+  "keywords": "http, client, esp32",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "authors": [
+    {
+      "name": "Project Author",
+      "email": ""
+    }
+  ],
+  "frameworks": [
+    "espidf"
+  ],
+  "platforms": [
+    "espressif32"
+  ]
+}

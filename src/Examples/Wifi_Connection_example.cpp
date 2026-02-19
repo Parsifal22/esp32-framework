@@ -1,6 +1,6 @@
-#include "../WiFiManager/WiFiManager.hpp"
-#include "../Mqtt_Connection/Mqtt_Connection.hpp"
-#include "../GPIO/GPIO.hpp"
+#include "WiFiManager.hpp"
+#include "Mqtt_Connection.hpp"
+#include "GPIO.hpp"
 #include "examples.hpp"
 
 void Wi_Fi_connection_example(void) {

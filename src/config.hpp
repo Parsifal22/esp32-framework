@@ -14,7 +14,6 @@
 #include "driver/gpio.h"
 #include "freertos/semphr.h"
 //static const char *MAIN = "MAIN_TASK";
-#include "freertos/semphr.h"
 #include "freertos/event_groups.h"
 #include "esp_timer.h"
 #endif 

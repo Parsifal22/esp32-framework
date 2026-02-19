@@ -1,9 +1,12 @@
 #pragma once
 
-#include "../config.hpp"
+#ifdef __cplusplus
+#include <string>
+#endif
 #include <vector>
 #include "esp_http_client.h"
-
+#include "esp_log.h" 
+#include "esp_crt_bundle.h"
 
 class HttpClient {
 public:

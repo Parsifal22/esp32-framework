@@ -1,5 +1,4 @@
 #include "HttpClient.hpp"
-#include "esp_crt_bundle.h"
 
 const char* HttpClient::TAG = "HTTP_CLIENT";
 

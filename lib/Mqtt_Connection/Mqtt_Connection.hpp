@@ -1,6 +1,9 @@
 #pragma once 
-#include "mqtt_client.h"        
-#include "../config.hpp"
+#include "mqtt_client.h"   
+#ifdef __cplusplus
+#include <string>
+#endif     
+#include "esp_log.h" 
 
 class Mqtt_Connection {
 private:
