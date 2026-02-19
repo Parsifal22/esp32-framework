@@ -8,7 +8,7 @@ void Wi_Fi_connection_example(void) {
     GPIO joystick_x(ADC_CHANNEL_6);
     GPIO joystick_y(ADC_CHANNEL_4);
 
-    WiFiManager wifi("Nothing", "Nothing654");
+    WiFiManager wifi("SSID", "PASSWORD");
 
     if (wifi.connect() == ESP_OK) {
         printf("We connected\n");

@@ -1,5 +1,7 @@
 #include "WiFiManager.hpp"
 
+static const char* TAG = "WiFiManager";
+
 WiFiManager::WiFiManager(const std::string& ssid, const std::string& password)
     : _ssid(ssid), _password(password) {}
 

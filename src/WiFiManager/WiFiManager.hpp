@@ -5,8 +5,6 @@
 #include "freertos/event_groups.h"
 #include "../config.hpp"
 
-static const char* TAG = "WiFiManager";
-
 class WiFiManager {
 public:
     WiFiManager(const std::string& ssid, const std::string& password);

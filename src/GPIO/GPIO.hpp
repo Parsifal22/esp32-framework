@@ -21,6 +21,7 @@ public:
         adc_oneshot_unit_init_cfg_t init_config = {
             .unit_id = ADC_UNIT_1,
             .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
+            .ulp_mode = ADC_ULP_MODE_DISABLE,
         };
         adc_oneshot_new_unit(&init_config, &_adc_handle);
 
