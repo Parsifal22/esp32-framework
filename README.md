@@ -206,10 +206,6 @@ If experiencing PSRAM cache errors, ensure the following build flags are set:
 
 MIT license 
 
-## Author
-
-[Add author information here]
-
 ## Revision History
 
 - **v1.0** (Feb 19, 2026) - Initial project structure and core functionality
