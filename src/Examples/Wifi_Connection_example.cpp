@@ -4,9 +4,9 @@
 #include "examples.hpp"
 
 void Wi_Fi_connection_example(void) {
-    GPIO joystick_button(GPIO_NUM_14, GPIO_MODE_INPUT);
-    GPIO joystick_x(ADC_CHANNEL_6);
-    GPIO joystick_y(ADC_CHANNEL_4);
+    GPIO joystick_button(GPIO_NUM_14, GPIO_MODE_INPUT, "joystick_button");
+    GPIO joystick_x(ADC_CHANNEL_6, "joystick_x");
+    GPIO joystick_y(ADC_CHANNEL_4, "joystick_y");
 
     WiFiManager wifi("SSID", "PASSWORD");
 

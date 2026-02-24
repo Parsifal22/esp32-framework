@@ -1,0 +1,13 @@
+{
+  "name": "MonitoringElement",
+  "version": "1.0.0",
+  "description": "Singleton class to monitor controller frequency",
+  "keywords": ["monitoring", "singleton", "frequency", "controller"],
+  "authors": [
+    {
+      "name": "Parsifal22",
+      "email": "your.email@example.com"
+    }
+  ],
+  "license": "MIT"
+}

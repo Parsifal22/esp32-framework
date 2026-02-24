@@ -1,10 +1,10 @@
-#include "freertos/FreeRTOS.h"
-#include "freertos/queue.h"
-#include "freertos/task.h"
+
 #include "GPIO.hpp"
 
+std::unordered_map<std::string, GPIO*> GPIO::_registry;
+
 // Constructor for Digital GPIO
-GPIO::GPIO(gpio_num_t pin, gpio_mode_t mode) : _pin(pin), _mode(mode) {
+GPIO::GPIO(gpio_num_t pin, gpio_mode_t mode, std::string name) : _pin(pin), _mode(mode)  {
     gpio_config_t io_conf = {};
     io_conf.intr_type = GPIO_INTR_DISABLE; // Disable interrupts by default
     io_conf.mode = mode;
@@ -12,13 +12,15 @@ GPIO::GPIO(gpio_num_t pin, gpio_mode_t mode) : _pin(pin), _mode(mode) {
     io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
     io_conf.pull_up_en = GPIO_PULLUP_DISABLE;
     gpio_config(&io_conf);
+
+    _registry[name] = this;
 }
 
 // Constructor for Analog GPIO (ADC)
-GPIO::GPIO(adc_channel_t channel) : _adc_chan(channel), _is_analog(true) {
+GPIO::GPIO(adc_channel_t channel, std::string name) : _adc_chan(channel), _is_analog(true) {
     adc_oneshot_unit_init_cfg_t init_config = {
         .unit_id = ADC_UNIT_1,
-        .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
+        .clk_src = ADC_DIGI_CLK_SRC_DEFAULT,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
     };
     adc_oneshot_new_unit(&init_config, &_adc_handle);
@@ -28,6 +30,8 @@ GPIO::GPIO(adc_channel_t channel) : _adc_chan(channel), _is_analog(true) {
         .bitwidth = ADC_BITWIDTH_DEFAULT,
     };
     adc_oneshot_config_channel(_adc_handle, _adc_chan, &config);
+
+    _registry[name] = this;
 }
 
 // Set GPIO output level (digital only)
@@ -74,4 +78,19 @@ void IRAM_ATTR GPIO::gpio_isr_handler(void* arg) {
     if (xHigherPriorityTaskWoken) {
         portYIELD_FROM_ISR();
     }
+}
+
+
+// Get a specific GPIO by its string key
+GPIO* GPIO::get_by_name(const std::string& name) {
+    auto it = _registry.find(name);
+    if (it != _registry.end()) {
+        return it->second;
+    }
+    return nullptr; 
+}
+
+// Get the entire map
+const std::unordered_map<std::string, GPIO*>& GPIO::get_all() {
+    return _registry;
 }
