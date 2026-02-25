@@ -1,6 +1,8 @@
 
 #include "MonitoringElement.hpp"
 #include "freertos/FreeRTOS.h"
+#include "sdkconfig.h"
+
 
 extern "C" void app_main(void) {
     MonitoringElement& monitor = MonitoringElement::getInstance();

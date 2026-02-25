@@ -1,3 +1,6 @@
 .pio
 .vscode
 sdkconfig.esp-wrover-kit
+sdkconfig.seeed_xiao_esp32c3
+.old
+src/Kconfig.projbuild
